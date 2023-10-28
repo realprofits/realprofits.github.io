@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>profits</title>
+  <script src="https://kit.fontawesome.com/26d4a64054.js" crossorigin="anonymous"></script>
+  <script src="title.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="custom.css" />
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+  <link rel="shortcut icon" type="image/jpg" href="https://media.discordapp.net/attachments/1167171505998811176/1167258473705246760/c66ae0299b7437710cb5bf905514eee7.webp"/>
+
+  <meta property="og:title" content="blank" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og.image" content="" />
+  <meta property="og.description" content="" />
+  <meta name="theme-color" content="#AA8DFF">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- AOS CSS & JS-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    .icons {
+      display: flex;
+      align-items: center;
+      animation: moveIcons 10s linear infinite; /* Adjust duration as needed */
+    }
+
+    @keyframes moveIcons {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(100% - 100px)); /* Adjust icon width (100px) */
+      }
+    }
+
+
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* This property ensures the video covers the entire viewport */
+      z-index: -1; /* Set a lower z-index to ensure it's in the background */
+    }
+
+    #content-container {
+      position: relative; /* Change from absolute to relative */
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #speaker-effect {
+      font-size: 25px; /* You can adjust the font size as needed */
+    }
+  </style>
+</head>
+
+<body class="animate__animated animate__fadeIn">
+<div id="wrapper">
+  <div id="particles-js"></div>
+  <script src="./assets/particles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <div id="preload">
+    <h2><font color="#959fb4">click to enter</h2>
+  </div>
+  <div id="hidden">
+      <video id="background-video" autoplay loop>
+        <source src="https://cdn.discordapp.com/attachments/1167171505998811176/1167245560789614742/x2mate.com-Punchmade_Dev_-_I_Scammed_New_York_Feat._Sha_Ek_Official_Music_Video-1080p.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    <div id="main">
+      <div id="content-container">
+        <div class="bass blur1">
+          <section>
+            <div class='animate__animated animate__fadeInDown'>
+              <div class='center'>
+                <div class='hero-img'>
+                  <i><img style="width: 100px; height: 100px;" src='https://media.discordapp.net/attachments/1167171505998811176/1167258473705246760/c66ae0299b7437710cb5bf905514eee7.webp?ex=654d792a&is=653b042a&hm=fa37b82a9aeead40711fe800bb5a220d5de22eea2c8ce29ff7cf0f0387c1a4c7&=&width=396&height=396'></i>
+                </div>
+                <div class='hero-text'>
+                  <h1 class="clickable-text" id="speaker-effect">profits</h1>
+<a href="https://t.me/realprofitz" target="_blank"><i class="fab fa-telegram" aria-hidden="true"></i></a>
+<a href="https://discord.com/invite/valuta" target="_blank"><i class="fab fa-discord" aria-hidden="true"></i></a>
+<a href="https://instagram.com/realprofits_" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+<a href="https://youtube.com/@realprofitz" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+
+                  <br>
+                  <span class="span-off"></span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="links">
+    <div class="menu">
+      <h5><font color="#AA8DFF">  </h5>
+    </div>
+  </div>
+</div>
+</div>
+<audio
+  id="music"
+  class="music"
+  src="https://cdn.discordapp.com/attachments/1167171505998811176/1167249848588845136/punchmade.mp3"
+  autoplay
+  loop
+  muted
+  onplaying="true"
+  style="display: none"
+></audio>
+
+<script src="https://cdn.jsdelivr.net/gh/Okazari/Rythm.js@2.3.2/rythm.min.js"></script>
+
+<script>
+  document.getElementById("music").pause();
+  document.getElementById("hidden").style = "opacity: 0; transition: 2s;";
+
+  document.addEventListener("mousedown", handleMouseDown);
+
+  function handleMouseDown() {
+    // Play the video
+    var video = document.getElementById("background-video");
+    video.style.opacity = 1;
+    video.play();
+
+    // Hide the "click to enter" div
+    document.getElementById("preload").style.opacity = 0;
+    document.getElementById("preload").style.transition = "0.6s";
+
+    // Show the content
+    document.getElementById("hidden").style.opacity = 1;
+    document.getElementById("hidden").style.transition = "2s";
+
+    var rythm = new Rythm();
+    rythm.addRythm("blur1", "blur", 0, 250);
+    rythm.addRythm('bass', 'pulse', 0, 10, {
+      min: 0.6,
+      max: 0.8
+    });
+    rythm.connectExternalAudioElement(document.getElementById("music"));
+    rythm.setGain(0.07);
+    rythm.start();
+    document.getElementById("music").play();
+    document.removeEventListener("mousedown", handleMouseDown);
+  }
+</script>
+
+  <script>
+    var typed = new Typed('.span-off', {
+      strings: ['mysterious'],
+      loop: true,
+      typeSpeed: 60,
+      backSpeed: 30,
+    });
+  </script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+<script src="./assets/font.js"></script>
+</body>
+</html>
